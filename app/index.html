@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Studio — GTA 6-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="studio">
+  <section class="panel-controls" aria-label="Cover controls">
+    <h1>Vice Cover Studio</h1>
+    <p class="tagline">Your photo, your caption, a sunset poster. Pick a size, export a PNG.</p>
+
+    <fieldset>
+      <legend>Photos — one per panel</legend>
+      <div class="slot-row" data-slot="0">
+        <span class="slot-name">Hero panel</span>
+        <label class="file-btn">Choose photo <input id="photo-0" type="file" accept="image/*"></label>
+      </div>
+      <div class="slot-row" data-slot="1">
+        <span class="slot-name">Top panel</span>
+        <label class="file-btn">Choose photo <input id="photo-1" type="file" accept="image/*"></label>
+      </div>
+      <div class="slot-row" data-slot="2">
+        <span class="slot-name">Bottom panel</span>
+        <label class="file-btn">Choose photo <input id="photo-2" type="file" accept="image/*"></label>
+      </div>
+      <label class="check"><input id="one-photo" type="checkbox"> Use the hero photo in all three panels</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Caption</legend>
+      <label>Title <input id="title" type="text" maxlength="24" value="Sunset Heist"></label>
+      <label>Tagline <input id="tagline" type="text" maxlength="48" value="A sunset story in three frames"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Layout</legend>
+      <div class="btn-row" id="layout-row">
+        <button type="button" data-layout="trio" class="picked">Three panels</button>
+        <button type="button" data-layout="duo">Two panels</button>
+        <button type="button" data-layout="single">One panel</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Grade</legend>
+      <div class="btn-row" id="grade-row">
+        <button type="button" data-grade="sunset" class="picked">Sunset</button>
+        <button type="button" data-grade="neon">Neon night</button>
+        <button type="button" data-grade="pink">Vice pink</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Frame the active panel</legend>
+      <div class="btn-row" id="active-row">
+        <button type="button" data-panel="0" class="picked">Hero</button>
+        <button type="button" data-panel="1">Top</button>
+        <button type="button" data-panel="2">Bottom</button>
+      </div>
+      <label>Zoom <input id="zoom" type="range" min="100" max="220" value="100"><span id="zoom-val">100%</span></label>
+      <label>Pan left–right <input id="pan-x" type="range" min="-40" max="40" value="0"><span id="pan-x-val">0</span></label>
+      <label>Pan up–down <input id="pan-y" type="range" min="-40" max="40" value="0"><span id="pan-y-val">0</span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Export size</legend>
+      <div class="btn-row" id="size-row">
+        <button type="button" data-size="square" class="picked">1080 × 1080</button>
+        <button type="button" data-size="portrait">1080 × 1350</button>
+        <button type="button" data-size="wide">1920 × 1080</button>
+      </div>
+    </fieldset>
+
+    <button id="export" type="button" class="export-btn">Export PNG</button>
+    <p id="status" role="status"></p>
+    <p class="fine">Photos never leave your machine. No Rockstar artwork, logo or font is used here — the lettering, sun and palms are drawn by this app.</p>
+  </section>
+  <section class="preview" aria-label="Cover preview">
+    <canvas id="poster" width="1080" height="1080"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/editor.js"></script>
+</body>
+</html>
