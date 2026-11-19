@@ -1,0 +1,29 @@
+html, body { margin: 0; min-height: 100%; background: #160a24; color: #f5eefc; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.studio { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.panel-controls { display: flex; flex-direction: column; gap: 14px; width: 320px; flex: none; }
+.panel-controls h1 { margin: 0; font-size: 30px; letter-spacing: 0.5px; color: #ffb347; }
+.tagline { margin: 0; color: #d9c8ec; }
+fieldset { border: 1px solid #4a2b6b; border-radius: 10px; padding: 12px; margin: 0; }
+legend { font-weight: 700; color: #ff8fd1; padding: 0 6px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; margin-top: 8px; }
+label:first-child { margin-top: 0; }
+label.check { flex-direction: row; align-items: center; gap: 8px; font-weight: 400; }
+input[type=text] { font: inherit; padding: 8px; border: 1px solid #6b4a8f; border-radius: 6px; background: #241233; color: #fff; }
+input[type=range] { accent-color: #ff5e8a; }
+.slot-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+.slot-row:first-child { margin-top: 0; }
+.slot-name { font-weight: 600; }
+.file-btn { margin: 0; font-weight: 600; padding: 6px 10px; border-radius: 6px; background: #3a1d5c; color: #fff; cursor: pointer; }
+.file-btn input { display: none; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn-row button { font: inherit; font-weight: 600; padding: 7px 10px; border: 1px solid #6b4a8f; border-radius: 6px; background: transparent; color: #f5eefc; cursor: pointer; }
+.btn-row button.picked { background: #ff5e8a; border-color: #ff5e8a; color: #fff; }
+.export-btn { font: inherit; font-weight: 800; font-size: 17px; padding: 12px; border: 0; border-radius: 8px; background: linear-gradient(90deg, #ff9a3d, #ff2e88); color: #fff; cursor: pointer; }
+#status { margin: 0; min-height: 1.2em; color: #8ef0c8; }
+.fine { margin: 0; font-size: 12px; color: #a98fc4; }
+.preview { flex: 1; display: flex; justify-content: center; }
+#poster { width: min(78vh, 62vw); height: auto; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); background: #2b1038; }
+body.shot-cover .panel-controls { display: none; }
+body.shot-cover .studio { padding: 0; }
+body.shot-cover #poster { width: 100vw; height: 100vh; object-fit: contain; box-shadow: none; }
+@media (max-width: 900px) { .studio { flex-direction: column; } .panel-controls { width: 100%; } #poster { width: 100%; } }
